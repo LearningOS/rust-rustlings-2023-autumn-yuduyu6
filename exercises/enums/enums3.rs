@@ -9,6 +9,9 @@
 
 enum Message {
     // TODO: implement the message variant types based on their usage below
+    Text(String),
+    Image(String),
+    Video(String),
 }
 
 struct Point {
@@ -43,6 +46,12 @@ impl State {
         // variants
         // Remember: When passing a tuple as a function argument, you'll need
         // extra parentheses: fn function((t, u, p, l, e))
+        match message {
+            Message::Move(p) => self.move_position(p),
+            Message::Color(c) => self.change_color(c),
+            Message::Quit => self.quit(),
+            Message::Echo(s) => self.echo(s),
+        }
     }
 }
 
