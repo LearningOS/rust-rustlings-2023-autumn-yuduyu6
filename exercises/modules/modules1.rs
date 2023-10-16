@@ -9,11 +9,12 @@ mod sausage_factory {
     // Don't let anybody outside of this module see this!
     fn get_secret_recipe() -> String {
         String::from("Ginger")
+        
     }
 
     fn make_sausage() {
-        get_secret_recipe();
-        println!("sausage!");
+        let secret_recipe=get_secret_recipe();
+        println!("{}", secret_recipe);
     }
 }
 
